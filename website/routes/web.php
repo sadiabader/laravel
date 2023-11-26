@@ -23,6 +23,14 @@ Route::get('/welcome', function () {
 //     //return view('about');
 //     echo"$name, $id";
 // });
-Route::get('/about/{name}/{id}', function (string $name, int $id){
-    return view('about') ->with(compact('name', 'id'));
+// Route::get('/about/{name}/{id}', function (string $name, int $id){
+//     return view('about') ->with(compact('name', 'id'));
+// });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
