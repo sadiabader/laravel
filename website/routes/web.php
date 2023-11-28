@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\customcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 // Route::get('/about/{name}/{id}', function (string $name, $id) {
 //     //return view('about');
 //     echo"$name, $id";
@@ -27,10 +27,14 @@ Route::get('/welcome', function () {
 //     return view('about') ->with(compact('name', 'id'));
 // });
 
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+Route::get('/welcome', [customcontroller::class, 'home']);
+Route::get('/about', [customcontroller::class, 'about']);
+Route::get('/contact', [customcontroller::class, 'contact']);
