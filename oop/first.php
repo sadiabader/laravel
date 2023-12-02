@@ -133,6 +133,7 @@ $parent->display_parent();
 $child = new childs();
 $child->display_parent();
 $child->father = "walid"
+$parent->display_child();
 ?>
 
 

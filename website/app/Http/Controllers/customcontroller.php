@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class customcontroller extends Controller
 {
     function home(){
-        return view('welcome');
+        return view('welcome')->with(compact('home'));
     }
     function about(){
         return view('about');
