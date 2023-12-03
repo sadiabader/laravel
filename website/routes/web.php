@@ -49,8 +49,8 @@ use App\Http\Controllers\Form;
 
 // Route::get('/contact', singleAction::class)->name('contact');
 
-Route::get('/register', [Form::class, 'register']);
-Route::post('/register', [Form::class, 'register']);
+Route::get('/register' ,[Form::class, 'register']);
+Route::post('/register' ,[Form::class, 'register']);
 
 
 
