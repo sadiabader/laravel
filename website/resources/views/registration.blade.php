@@ -11,7 +11,7 @@
 <style>
 
 .container{
-    height: 400px;
+    height: 500px;
     width: 600px;
     margin-top: 100px;
     background-color: palevioletred;
@@ -47,19 +47,41 @@ label{
 </head>
 <body>
     <div class="container">
+{{-- @php
+    print_r($errors);
+@endphp --}}
 
 <form action="{{url('/')}}/register" method="POST">
-
+@csrf
 <h1>Registration Form</h1>
 
 <div class="mb-3">
 
 <label for="name" class="form-label"> Name</label>
-<input type="name"class="form-control"name="name" placeholder="Enter your Name">
+<input type="name"class="form-control"name="name" placeholder="Enter your Name"value="{{old('name')}}">
+<span class="text-danger">
+  @error('name');
+      {{$message}}
+  @enderror
+</span>
+<br>
+
 <label for="email" class="form-label"> Email</label>
-<input type="email"class="form-control"name="email" placeholder="Enter your Email">
+<input type="email"class="form-control"name="email" placeholder="Enter your Email"value="{{old('email')}}">
+<span class="text-danger">
+    @error('email');
+        {{$message}}
+    @enderror
+  </span>
+  <br>
 <label for="password" class="form-label"> Password</label>
-<input type="password"class="form-control"name="password" placeholder="Enter your Password">
+<input type="password"class="form-control"name="password" placeholder="Enter your Password" value="{{old('pass')}}">
+<span class="text-danger">
+    @error('pass');
+        {{$message}}
+    @enderror
+  </span>
+  <br>
 <br>
 <input type="submit"name="register" value="register" class="btn btn">
 
