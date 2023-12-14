@@ -74,8 +74,8 @@ label{
     @enderror
   </span>
   <br>
-<label for="password" class="form-label"> Password</label>
-<input type="password"class="form-control"name="password" placeholder="Enter your Password" value="{{old('pass')}}">
+<label for="pass" class="form-label"> Password</label>
+<input type="pass"class="form-control"name="pass" placeholder="Enter your Password" value="{{old('pass')}}">
 <span class="text-danger">
     @error('pass');
         {{$message}}

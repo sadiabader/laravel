@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\customcontroller;
 use App\Http\Controllers\singlAction;
 use App\Http\Controllers\Form;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,8 @@ use App\Http\Controllers\Form;
 
 Route::get('/register' ,[Form::class, 'register']);
 Route::post('/register' ,[Form::class, 'register_data']);
+
+Route::get('/usr/view' ,[Form::class, 'user_view']);
 
 
 
