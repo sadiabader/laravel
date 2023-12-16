@@ -19,44 +19,61 @@
     </head>
 
     <body>
+      <div class="container">
 
-<div class="container">
+   <div class="table-responsive">
 
-  <div class="table-responsive">
-  <h1 class="text-center my-5">User Information </h1>
-   <table class="table">
+   <h1 class="text-center my-5"> user information </h1>
 
-      <div class="table table-dark">
+ <table class="table">
 
-    <thead> 
-         <tr class="">
-             <th scope="col">User Id</th>
-             <th scope="col">User Name</th>
-             <th scope="col">User Email</th>
-         </tr>
-        </thead>
-        <tbody>
-            {{-- @php
-                dd($record)
-            @endphp --}}
-            @foreach ($records as $item)
-         <tr class="">
-            <td scope="row">{{$item->id}}</td>
-            <td scope="row">{{$item->name}}</td>
-            <td scope="row">{{$item->email}}</td>
-         </tr>
-         <tr class="">
-            <td scope="row">item1</td>
-            <td scope="row">item2</td>
-            <td scope="row">item3</td>
-         </tr>
-         @endforeach
-           </thead>
-               </tbody>
-                  </div>
-                     </table>
-                        </div>
-                            </div>
+<thead class="table-dark">
+   <tr>
+  <th scope="col">user id</th>
+  <th scope="col">user name</th>
+  <th scope="col">user email</th>
+  <th scope="col">Delete</th>
+  <th scope="col">Update</th>
+   </tr>
+</thead>
+<tbody>
+    @foreach ($records as $item)
+        
+    
+  <tr class="">
+   <td scope="row">{{$item->id}}</td>
+  <td>{{$item->name}}</td>
+  <td>{{$item->email}}</td>
+  <td><a class="btn btn-danger" href="{{route('delete', $item->id)}}">Delete</a></td>
+  <td><a class="btn btn-success" href="{{route('update', $item->id)}}">Update</a></td>
+  </tr>
+  @endforeach
+ 
+
+</tbody>
+
+
+
+
+
+
+ </table>
+
+
+
+   </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+
 
         <header>
             <!-- place navbar here -->

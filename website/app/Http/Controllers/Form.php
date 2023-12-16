@@ -26,8 +26,9 @@ $data->email = $request['email'];
 $data->password =$request['pass'];
 $data->save();
 // return redirect('/register');
-return redirect('/register');
+return redirect('/user-view');
 
+}
 public function user_view(){
     $records = FormModel::all();
     // eco '<pre>';
@@ -39,10 +40,25 @@ public function user_view(){
 
     return view('user-view')->with($userdata);
 }
-
+public function delete($id){
+//   $records = FormModel::find($id)->delete();
+  $records = FormModel::find($id);
+  if(!is_null($records)){
+    $records->delete();
+  }else{
+    return redirect('user-view');
+  }
+ // dd($records);
+}
+public function update($id){
+    // return view('user-update');
+    $records = FormModel::find($id);
+    // dd($records);
+    $data compact('records');
+  
+    return view('user update');
 
 
 
 }
-
 }

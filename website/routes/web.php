@@ -53,7 +53,9 @@ use App\Http\Controllers\Form;
 Route::get('/register' ,[Form::class, 'register']);
 Route::post('/register' ,[Form::class, 'register_data']);
 
-Route::get('/usr/view' ,[Form::class, 'user_view']);
+Route::get('/user-view' ,[Form::class, 'user_view']);
+Route::get('/user-delete/{id}' ,[Form::class, 'delete'])->name('delete');
+Route::get('/user-update/{id}' ,[Form::class, 'update'])->name('update');
 
 
 
