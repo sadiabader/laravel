@@ -43,7 +43,7 @@ public function user_view(){
 public function delete($id){
 //   $records = FormModel::find($id)->delete();
   $records = FormModel::find($id);
-  if(!is_null($records)){
+  if(!is_null($record)){
     $records->delete();
   }else{
     return redirect('user-view');
@@ -54,9 +54,9 @@ public function update($id){
     // return view('user-update');
     $records = FormModel::find($id);
     // dd($records);
-    $data compact('records');
+    $data = compact('records');
   
-    return view('user update');
+    return view('user-update');
 
 
 
